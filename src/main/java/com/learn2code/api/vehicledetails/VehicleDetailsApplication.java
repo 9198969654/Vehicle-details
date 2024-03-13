@@ -10,4 +10,6 @@ public class VehicleDetailsApplication {
 		SpringApplication.run(VehicleDetailsApplication.class, args);
 	}
 // git  status
+
+	//git status 2
 }
