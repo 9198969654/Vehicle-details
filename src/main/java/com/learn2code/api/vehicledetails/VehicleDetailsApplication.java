@@ -9,5 +9,5 @@ public class VehicleDetailsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(VehicleDetailsApplication.class, args);
 	}
-// git  status
+
 }
