@@ -21,7 +21,7 @@ public class VehicleDetailServiceImpl implements VehicleDetailService {
         }catch (Exception ex){
             throw new VehicleNotSaved("Unable to save vehicle in DB, Got Error: " +ex.getMessage());
         }
-       return vehicleDetailsDAO.save(vehicleDetail);
+       return dbDetails;
 
     }
 }
