@@ -1,27 +1,45 @@
-package com.learn2code.api.vehicledetails.config;
-
-import jakarta.servlet.ServletContext;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.web.context.ServletContextAware;
-
-@Configuration
-@EnableWebSecurity
-public class AppSecurityConfig extends WebSecurityConfigurerAdapter implements ServletContextAware {
-
-    @Autowired
-    private ServletContext servletContext;
-
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable();
-    }
-
-    @Override
-    public void setServletContext(ServletContext servletContext) {
-        this.servletContext = servletContext;
-    }
-}
+//package com.learn2code.api.vehicledetails.config;
+//
+//import org.springframework.context.annotation.Bean;
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.http.HttpHeaders;
+//import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+//import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+//import org.springframework.security.config.http.SessionCreationPolicy;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
+//
+//@Configuration
+//@EnableWebSecurity
+//public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
+//
+////    @Bean
+////    public JwtAuthenticationEntryPoint jwtAunthenticationEntryPoint() {
+////        return new JwtAuthenticationEntryPoint();
+////    }
+//
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//
+//        http.cors().and().csrf().disable();
+////                .authorizeRequests().antMatchers("/authenticate","/user/register-new-user").permitAll()
+////                .antMatchers(HttpHeaders.ALLOW).permitAll()
+////                .anyRequest().authenticated()
+////                .and()
+////                // reference here the method of the @Bean
+////                .exceptionHandling().authenticationEntryPoint(jwtAunthenticationEntryPoint())
+////                .and()
+////                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//    }
+//
+//
+//    @Bean
+//    public PasswordEncoder passwordEncoder()
+//    {
+//        return new BCryptPasswordEncoder();
+//    }
+//
+//
+//}
