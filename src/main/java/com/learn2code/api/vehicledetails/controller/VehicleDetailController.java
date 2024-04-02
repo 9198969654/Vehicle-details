@@ -1,8 +1,10 @@
 package com.learn2code.api.vehicledetails.controller;
 
 
+import com.learn2code.api.vehicledetails.dto.VehicleDetailsDTO;
 import com.learn2code.api.vehicledetails.enteties.VehicleDetail;
 import com.learn2code.api.vehicledetails.errors.MandatoryFieldMissingException;
+import com.learn2code.api.vehicledetails.errors.VehicleDetailsNotFound;
 import com.learn2code.api.vehicledetails.errors.VehicleNotSaved;
 import com.learn2code.api.vehicledetails.service.VehicleDetailService;
 import jakarta.validation.Valid;
@@ -12,10 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -39,4 +38,30 @@ public class VehicleDetailController {
        VehicleDetail dbVehicle =  vehicleDetailService.saveVehicleDetails(vehicleDetail);
        return new ResponseEntity<>(dbVehicle, HttpStatus.CREATED);
     }
+
+    @GetMapping
+    public VehicleDetailsDTO getAllVehicleDetails() throws VehicleDetailsNotFound {
+        List<VehicleDetail> savedVehicles  = vehicleDetailService.fetchAllVehicleDetails();
+       return new VehicleDetailsDTO(savedVehicles);
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
