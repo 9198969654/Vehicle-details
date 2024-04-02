@@ -1,6 +1,7 @@
 package com.learn2code.api.vehicledetails.controller;
 
 
+import com.learn2code.api.vehicledetails.dto.VehicleDetailsDTO;
 import com.learn2code.api.vehicledetails.enteties.VehicleDetail;
 import com.learn2code.api.vehicledetails.errors.MandatoryFieldMissingException;
 import com.learn2code.api.vehicledetails.errors.VehicleDetailsNotFound;
@@ -39,8 +40,9 @@ public class VehicleDetailController {
     }
 
     @GetMapping
-    public List<VehicleDetail> getAllVehicleDetails() throws VehicleDetailsNotFound {
-       return vehicleDetailService.fetchAllVehicleDetails();
+    public VehicleDetailsDTO getAllVehicleDetails() throws VehicleDetailsNotFound {
+        List<VehicleDetail> savedVehicles  = vehicleDetailService.fetchAllVehicleDetails();
+       return new VehicleDetailsDTO(savedVehicles);
     }
 
 
