@@ -12,3 +12,4 @@ public interface VehicleDetailService {
     VehicleDetail saveVehicleDetails(VehicleDetail vehicleDetail) throws VehicleNotSaved;
     List<VehicleDetail> fetchAllVehicleDetails() throws VehicleDetailsNotFound;
 }
+//
