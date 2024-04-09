@@ -42,4 +42,5 @@ public class VehicleDetail {
     private String sellerPhone;
 
 
+
 }

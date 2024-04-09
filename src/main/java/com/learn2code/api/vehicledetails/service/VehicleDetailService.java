@@ -8,3 +8,4 @@ public interface VehicleDetailService {
 
     VehicleDetail saveVehicleDetails(VehicleDetail vehicleDetail) throws VehicleNotSaved;
 }
+//
